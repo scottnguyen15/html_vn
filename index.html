@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML/CSS Tutor</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Welcome to HTML & CSS Tutor</h1>
+  <div id="progress-container"></div>
+
+  <script type="module">
+    import { auth } from './js/firebase-config.js';
+    import { getProgress } from './js/progress.js';
+    import { onAuthStateChanged, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+    function renderProgress(progress) {
+      const container = document.getElementById('progress-container');
+      container.innerHTML = `
+        <h2>Chapters</h2>
+        <ul>
+          <li>Chapter 1: ${progress.chapter1 || 'Not started'} - <a href="chapter1.html">Go</a></li>
+        </ul>
+      `;
+    }
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) await signInAnonymously(auth);
+      const progress = await getProgress();
+      renderProgress(progress);
+    });
+  </script>
+</body>
+</html>
