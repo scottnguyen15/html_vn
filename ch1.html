@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter 1: HTML Basics</title>
+</head>
+<body>
+  <h1>HTML Basics</h1>
+  <p>Learn how to write basic HTML.</p>
+  <button id="complete">Mark as Complete</button>
+  <a href="index.html">Back to Home</a>
+
+  <script type="module">
+    import { auth } from './js/firebase-config.js';
+    import { saveProgress } from './js/progress.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+    document.getElementById('complete').addEventListener('click', () => {
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          await saveProgress("chapter1", "complete");
+          alert("Progress saved!");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
