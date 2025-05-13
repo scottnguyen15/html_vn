@@ -1,27 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chapter 1: HTML Basics</title>
+  <meta charset="UTF-8">
+  <title>HTML VN - Chapter 1</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <h1>HTML Basics</h1>
-  <p>Learn how to write basic HTML.</p>
-  <button id="complete">Mark as Complete</button>
-  <a href="index.html">Back to Home</a>
 
-  <script type="module">
-    import { auth } from './js/firebase-config.js';
-    import { saveProgress } from './js/progress.js';
-    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+  <!-- Header -->
+  <header class="topbar">
+  <h1 class="title">HTML VN</h1>
 
-    document.getElementById('complete').addEventListener('click', () => {
-      onAuthStateChanged(auth, async (user) => {
-        if (user) {
-          await saveProgress("chapter1", "complete");
-          alert("Progress saved!");
-        }
-      });
-    });
-  </script>
+  <div class="language-toggle">
+    <button id="langToggle">ENG</button>
+  </div>
+
+  <div class="top-icons">
+    <a href="index.html">Home</a>
+  </div>
+</header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Chapters</h2>
+    <ul>
+      <li><button class="chapter-toggle">Chapter 1 ▸</button>
+        <ul class="lesson-list hidden">
+          <li><a href="#">Lesson 1.1: Introduction to HTML</a></li>
+          <li><a href="#">Lesson 1.2: (test lesson)</a></li>
+        </ul>
+      </li>
+      <li><button class="chapter-toggle">Chapter 2 ▸</button>
+        <ul class="lesson-list hidden">
+          <li><a href="#">Lesson 2.1: Introduction to CSS</a></li>
+          <li><a href="#">Lesson 2.2: (test lesson 2)</a></li>
+        </ul>
+      </li>
+      <li><button class="chapter-toggle">Chapter 3 ▸</button>
+        <ul class="lesson-list hidden">
+          <li><a href="#">Lesson 3.1: Introduction to CSS</a></li>
+          <li><a href="#">Lesson 3.2: (test lesson 2)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Chapter Content -->
+  <main class="content">
+  <section class="lesson-content" data-lang="EN">
+    <h2>Lesson 1.1: Introduction to HTML</h2>
+    <p>HTML (Hyper Text Markup Language) is the standard markup language that is used for creating Web pages. It is the structure of a Web page and consists of elements. Elements are used as a way to tell the browser how to display content, things include a heading, paragraph, link, etc.</p>
+    <h3>Example</h3>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+
+  <section class="lesson-content hidden" data-lang="VN">
+    <h2>Bài học 1.1: HTML là gì?</h2>
+    <p>HTML (Hyper Text Markup Language) là ngôn ngữ đánh dấu tiêu chuẩn được dùng để tạo ra các trang web. Nó giống như là phần khung sườn của một trang web, được cấu thành từ các thành phần gọi là element. Mấy cái element này dùng để chỉ cho trình duyệt biết cách hiển thị nội dung ví dụ như tiêu đề, đoạn văn, liên kết, v.v.</p>
+    <h3>Ví dụ</h3>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Trang đầu tiên&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Xin chào thế giới!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  </section>
+
+  <!-- LESSON 2.1 – ENGLISH -->
+  <section class="lesson-content hidden" data-lang="EN" id="lesson-2-1">
+  <h2>Lesson 2.1: What is CSS?</h2>
+  <p>CSS stands for Cascading Style Sheets. It’s the language used to style HTML content — for example, changing fonts, colors, layouts, and spacing.</p>
+
+  <h3>What does “Cascading” mean?</h3>
+  <p>It refers to the order in which rules are applied. If multiple rules affect the same element, CSS “cascades” them based on specificity and order.</p>
+
+  <h3>Basic CSS Example</h3>
+  <p>Here’s how to style a paragraph to be red and center-aligned:</p>
+
+  <pre><code>p {
+  color: red;
+  text-align: center;
+  }</code></pre>
+
+  <p>This CSS can be placed inside a &lt;style&gt; tag in the HTML &lt;head&gt; section, or in a separate `.css` file linked with &lt;link&gt;.</p>
+  </section>
+
+  <!-- LESSON 2.1 – VIETNAMESE -->
+  <section class="lesson-content hidden" data-lang="VN" id="lesson-2-1-vn">
+  <h2>Bài học 2.1: CSS là gì?</h2>
+  <p>CSS là viết tắt của Cascading Style Sheets. Đây là ngôn ngữ dùng để tạo kiểu cho nội dung HTML — ví dụ như thay đổi phông chữ, màu sắc, bố cục và khoảng cách.</p>
+
+  <h3>“Cascading” nghĩa là gì?</h3>
+  <p>Nó đề cập đến thứ tự áp dụng các quy tắc. Nếu nhiều quy tắc áp dụng cho cùng một phần tử, CSS sẽ “xếp chồng” chúng theo mức độ ưu tiên và thứ tự xuất hiện.</p>
+
+  <h3>Ví dụ CSS cơ bản</h3>
+  <p>Đây là cách để làm cho đoạn văn bản có màu đỏ và căn giữa:</p>
+
+  <pre><code>p {
+  color: red;
+  text-align: center;
+  }</code></pre>
+
+  <p>Đoạn CSS này có thể được đặt trong thẻ &lt;style&gt; trong phần &lt;head&gt; của HTML, hoặc trong một tệp `.css` riêng biệt được liên kết bằng &lt;link&gt;.</p>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bottombar">
+    <span class="page-num">Lesson 1.1</span>
+    <div class="progress">
+      <div class="progress-bar" style="width: 40%;"></div>
+    </div>
+    <div class="nav-buttons">
+      <button disabled>← Prev</button>
+      <button>Next →</button>
+    </div>
+  </footer>
+
+  <script src="js/sidebar.js"></script>
+  <script src="js/lang-toggle.js"></script>
 </body>
 </html>
