@@ -8,11 +8,11 @@ body {
 }
 
 .theme-light {
-  --color-primary: #0060df;
+  --color-primary: #F3F6F4;
   --color-secondary: #fbfbfe;
   --color-accent: #fd6f53;
   --font-color: #000000;
-  --color-header: #0060df;
+  --color-header: #F3F6F4;
   --font-family: 'Segoe UI', sans-serif;
 }
 .theme-dark {
