@@ -1,1 +1,129 @@
-balls
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-family, sans-serif);
+}
+
+.theme-light {
+  --color-primary: #0060df;
+  --color-secondary: #fbfbfe;
+  --color-accent: #fd6f53;
+  --font-color: #000000;
+  --color-header: #0060df;
+  --font-family: 'Segoe UI', sans-serif;
+}
+.theme-dark {
+  --color-primary: #121212;
+  --color-secondary: #282828;
+  --color-accent: #12cdea;
+  --font-color: #ffffff;
+  --color-header: #121212;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+.theme-main {
+  --color-primary: #ff6600;
+  --color-secondary: #fff3e0;
+  --color-accent: #ffcc80;
+  --font-color: #000000;
+  --color-header: #ff6600;
+  --font-family: 'Fira Sans', sans-serif;
+}
+
+.theme-uw {
+  --color-primary: #4b2e83;
+  --color-secondary: #ece9f1;
+  --color-accent: #b7a57a;
+  --font-color: #ffffff;
+  --color-header: #4b2e83;
+  --font-family: 'Georgia', sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: var(--color-secondary);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  color: var(--font-color);
+  font-family: sans-serif;
+}
+.container button {
+  color: var(--font-color);
+  background: var(--color-primary);
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.theme-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-family: sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: var(--font-color);
+  transition: background 0.3s ease;
+}
+
+.theme-buttons button:hover {
+  opacity: 0.85;
+}
+
+/* Universal */
+.header {
+  background: var(--color-header);
+  color: var(--font-color);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+}
+
+.header .title {
+  margin: 0;
+  font-size: 1.4em;
+  color: var(--font-color); 
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-icons a {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 1em;
+  padding: 0.3em 0.6em;
+  border: 1px solid var(--font-color);
+  border-radius: 3px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-header);
+  color: var(--font-color);
+  padding: 0.5em 1em;
+  height: 3em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
